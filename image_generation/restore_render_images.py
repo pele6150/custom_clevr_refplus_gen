@@ -453,14 +453,22 @@ def add_random_objects(scene_struct, args, camera, idx):
     utils.add_object(args.shape_dir, obj_name, r, (x, y), theta=theta)
     obj = bpy.context.object
 
-    # PL: Added bounding box in the 3d space here
-    bound_box = obj.bound_box
-    bound_box = [v[:] for v in bound_box]
-    new_bound_box = []
-    for i in bound_box:
-      bbox_pt = Vector(tuple(np.add(list(i), list(obj.location))))
-      cur_bbox_pt, _wh = utils.get_camera_coords(camera, bbox_pt)
-      new_bound_box.append(cur_bbox_pt)
+    # PL: Add the point clouds here
+    # modified from a blog post here:
+    # https://blenderartists.org/t/mesh-to-point-cloud/1124144/14
+    obj_location = list(obj.location)
+    pt_cloud = []
+
+    data = obj.data
+
+    for face in data.polygons:
+        for index in face.vertices:
+            vert = data.vertices[index]
+            og_pt_coords = [vert.co.x, vert.co.y, vert.co.z]
+            og_pt_vect = Vector(tuple(np.add(og_pt_coords, obj_location)))
+            cur_pt, _wh = utils.get_camera_coords(camera, og_pt_vect)
+
+        pt_cloud.append(cur_pt)
 
     blender_objects.append(obj)
 
@@ -477,7 +485,7 @@ def add_random_objects(scene_struct, args, camera, idx):
       'rotation': theta,
       'pixel_coords': pixel_coords,
       'color': color_name,
-      '3d_bbox': new_bound_box
+      '3d_pt_cloud': pt_cloud
     })
 
 
