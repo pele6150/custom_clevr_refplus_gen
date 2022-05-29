@@ -1,3 +1,6 @@
+# THIS REPO IS A COPY OF THE ORIGINAL REPO FROM https://github.com/ccvl/clevr-refplus-dataset-gen
+## MODIFIED FOR A MORE SPECIFIC USE CASE
+
 # CLEVR-Ref+ Dataset Generation
 
 This is the code used to generate the CLEVR-Ref+ dataset. See our [paper](https://arxiv.org/abs/1901.00850):
