@@ -1,0 +1,216 @@
+[
+  {
+    "text": [
+      "<rORD_NUM2> <VIS2> <Z2> <C2> <M2> <S2>(s) <ORD_DIR2> that are <R> <rORD_NUM> <VIS> <Z> <C> <M> <S>(s) <ORD_DIR>", 
+      "Find <rORD_NUM> <VIS> <Z> <C> <M> <S>(s) <ORD_DIR>; <rORD_NUM2> <VIS2> <Z2> <C2> <M2> <S2>(s) <ORD_DIR2> that are <R> it", 
+      "Look at <rORD_NUM> <VIS> <Z> <C> <M> <S>(s) <ORD_DIR>; <rORD_NUM2> <VIS2> <Z2> <C2> <M2> <S2>(s) <ORD_DIR2> that are <R> it"
+    ], 
+    "nodes": [
+      {
+        "inputs": [], 
+        "type": "scene"
+      }, 
+      {
+        "side_inputs": [
+          "<Z>", 
+          "<C>", 
+          "<M>", 
+          "<S>", 
+          "<rORD_NUM>", 
+          "<ORD_DIR>", 
+          "<VIS>"
+        ], 
+        "inputs": [
+          0
+        ], 
+        "type": "filter_unique"
+      }, 
+      {
+        "side_inputs": [
+          "<R>", 
+          "<Z2>", 
+          "<C2>", 
+          "<M2>", 
+          "<S2>", 
+          "<rORD_NUM2>", 
+          "<ORD_DIR2>", 
+          "<VIS2>"
+        ], 
+        "inputs": [
+          1
+        ], 
+        "type": "relate_filter_count"
+      }
+    ], 
+    "params": [
+      {
+        "type": "Size", 
+        "name": "<Z>"
+      }, 
+      {
+        "type": "Color", 
+        "name": "<C>"
+      }, 
+      {
+        "type": "Material", 
+        "name": "<M>"
+      }, 
+      {
+        "type": "Shape", 
+        "name": "<S>"
+      }, 
+      {
+        "type": "Relation", 
+        "name": "<R>"
+      }, 
+      {
+        "type": "Size", 
+        "name": "<Z2>"
+      }, 
+      {
+        "type": "Color", 
+        "name": "<C2>"
+      }, 
+      {
+        "type": "Material", 
+        "name": "<M2>"
+      }, 
+      {
+        "type": "Shape", 
+        "name": "<S2>"
+      }, 
+      {
+        "type": "Ordinal_number", 
+        "name": "<rORD_NUM>"
+      }, 
+      {
+        "type": "Ordinal_direction", 
+        "name": "<ORD_DIR>"
+      }, 
+      {
+        "type": "Visible", 
+        "name": "<VIS>"
+      }, 
+      {
+        "type": "Ordinal_number", 
+        "name": "<rORD_NUM2>"
+      }, 
+      {
+        "type": "Ordinal_direction", 
+        "name": "<ORD_DIR2>"
+      }, 
+      {
+        "type": "Visible", 
+        "name": "<VIS2>"
+      }
+    ], 
+    "constraints": []
+  },
+  {
+    "text": [
+      "<rORD_NUM2> <VIS2> <Z2> <C2> <M2> <S2>(s) <ORD_DIR2> that are <R> <rORD_NUM> <VIS> <Z> <C> <M> <S>(s) <ORD_DIR>", 
+      "Find <rORD_NUM> <VIS> <Z> <C> <M> <S>(s) <ORD_DIR>; <rORD_NUM2> <VIS2> <Z2> <C2> <M2> <S2>(s) <ORD_DIR2> that are <R> it", 
+      "Look at <rORD_NUM> <VIS> <Z> <C> <M> <S>(s) <ORD_DIR>; <rORD_NUM2> <VIS2> <Z2> <C2> <M2> <S2>(s) <ORD_DIR2> that are <R> it"
+    ], 
+    "nodes": [
+      {
+        "inputs": [], 
+        "type": "scene"
+      }, 
+      {
+        "side_inputs": [
+          "<Z>", 
+          "<C>", 
+          "<M>", 
+          "<S>", 
+          "<rORD_NUM>", 
+          "<ORD_DIR>", 
+          "<VIS>"
+        ], 
+        "inputs": [
+          0
+        ], 
+        "type": "filter_unique"
+      }, 
+      {
+        "side_inputs": [
+          "<R>", 
+          "<Z2>", 
+          "<C2>", 
+          "<M2>", 
+          "<S2>", 
+          "<rORD_NUM2>", 
+          "<ORD_DIR2>", 
+          "<VIS2>"
+        ], 
+        "inputs": [
+          1
+        ], 
+        "type": "relate_filter_count"
+      }
+    ], 
+    "params": [
+      {
+        "type": "Size", 
+        "name": "<Z>"
+      }, 
+      {
+        "type": "Color", 
+        "name": "<C>"
+      }, 
+      {
+        "type": "Material", 
+        "name": "<M>"
+      }, 
+      {
+        "type": "Shape", 
+        "name": "<S>"
+      }, 
+      {
+        "type": "Relation", 
+        "name": "<R>"
+      }, 
+      {
+        "type": "Size", 
+        "name": "<Z2>"
+      }, 
+      {
+        "type": "Color", 
+        "name": "<C2>"
+      }, 
+      {
+        "type": "Material", 
+        "name": "<M2>"
+      }, 
+      {
+        "type": "Shape", 
+        "name": "<S2>"
+      }, 
+      {
+        "type": "Ordinal_number", 
+        "name": "<rORD_NUM>"
+      }, 
+      {
+        "type": "Ordinal_direction", 
+        "name": "<ORD_DIR>"
+      }, 
+      {
+        "type": "Visible", 
+        "name": "<VIS>"
+      }, 
+      {
+        "type": "Ordinal_number", 
+        "name": "<rORD_NUM2>"
+      }, 
+      {
+        "type": "Ordinal_direction", 
+        "name": "<ORD_DIR2>"
+      }, 
+      {
+        "type": "Visible", 
+        "name": "<VIS2>"
+      }
+    ], 
+    "constraints": []
+  }
+]
