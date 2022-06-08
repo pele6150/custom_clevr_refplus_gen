@@ -462,13 +462,22 @@ def add_random_objects(scene_struct, args, camera, idx):
     data = obj.data
 
     for face in data.polygons:
-        for index in face.vertices:
-            vert = data.vertices[index]
-            og_pt_coords = [vert.co.x, vert.co.y, vert.co.z]
-            og_pt_vect = Vector(tuple(np.add(og_pt_coords, obj_location)))
-            cur_pt, _wh = utils.get_camera_coords(camera, og_pt_vect)
+      cur_face = []
+      for index in face.vertices:
+        vert = data.vertices[index]
+        og_pt_coords = [vert.co.x, vert.co.y, vert.co.z]
+        pt_normal = [vert.normal.x, vert.normal.y, vert.normal.z]
 
-        pt_cloud.append(cur_pt)
+        # Do we want to even convert to camera coords? for point clouds we shouldn't need to...
+        # og_pt_vect = Vector(tuple(np.add(og_pt_coords, obj_location)))
+        # cur_pt, _wh = utils.get_camera_coords(camera, og_pt_vect)
+
+        # If converting to camera coords:
+        # cur_face.append(cur_pt + pt_normal)
+        # If not:
+        cur_face.append(og_pt_coords + pt_normal)
+      pt_cloud.append(cur_face)
+
 
     blender_objects.append(obj)
 
@@ -485,6 +494,7 @@ def add_random_objects(scene_struct, args, camera, idx):
       'rotation': theta,
       'pixel_coords': pixel_coords,
       'color': color_name,
+      # PL: pt_cloud is XYZ, normal.
       '3d_pt_cloud': pt_cloud
     })
 
